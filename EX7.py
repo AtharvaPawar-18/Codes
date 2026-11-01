@@ -7,7 +7,7 @@ def isSafe(board, row, col, n):
       return False
 
   #Check upper Diagonal
-  i, j = row, col
+  i, j = row-1, col-1
   while i >= 0 and j >= 0:
     if board[i][j] == 1:
       return False
@@ -15,14 +15,14 @@ def isSafe(board, row, col, n):
     j = j-1
 
   #Check lower Diagonal
-  i, j = row, col
+  i, j = row+1, col-1
   while i < n and j >= 0:
     if board[i][j] == 1:
       return False
     i = i+1
     j = j-1
 
-    return True
+  return True
 
 #Solving
 def solve(board, col, n):
